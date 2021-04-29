@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Credit Card Balance Transfer Calculator</h1>
+  <p>
+    With Balance Transfer, you can consolidate all your other credit card balances and pay in fixed monthly installments for up to 36 months.
+  </p>
+<ion-item>
+  <ion-label>Balance Transfer Amount :</ion-label>
+  <ion-input type="number" [(ngModel)]="BTAmount"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label>Payment Terms :</ion-label>
+  <ion-select placeholder="Select One" [(ngModel)]="PayTerm" single ="true">
+    <ion-option number=6>
+      6
+    </ion-option>
+    <ion-option number=12>
+      12
+    </ion-option>
+     <ion-option number=18>
+      18
+    </ion-option>
+     <ion-option number=24>
+      24
+    </ion-option>
+  </ion-select>
+</ion-item>
+<button ion-button color="dark" (click)="calculateTIP()" (click)="calculateTAP()"(click)="calculateMP()" >CALCULATE</button>
+<ion-item>
+  <h2>Total Interest Payable : PHP {{tip}}</h2>
+</ion-item>
+<ion-item>
+  <h2>Monthly Payment : PHP {{mp}}</h2>
+</ion-item>
+<ion-item>
+  <h2>Total Amount : PHP {{tap}}</h2>
+</ion-item>
